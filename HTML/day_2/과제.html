@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>설문조사 과제</title>
+</head>
+<body>
+  <header>
+    <h1>설문조사 양식(과제)</h1>
+    <p>모든 항목에 빠짐없이 체크해주십시오.</p>
+  </header>
+  <hr>
+  <main>
+    <form>
+      <fieldset>
+        <legend>개인정보</legend>
+        <label for="name">이름</label>
+        <input type="text" 
+        name="name"
+        id="name"
+        placeholder="본명을 입력하세요" >
+        <br>
+        <label for="email">이메일</label>
+        <input type="text" 
+        name="email"
+        id="email"
+        placeholder="이메일 주소를 쓰세요">
+      </fieldset>
+      <fieldset>
+        <legend>설문</legend>
+        
+        <p>좋아하는 도형이 어떻게 되십니까?</p>
+        <input type="checkbox" id="circle" name="figure">
+        <label for="circle">원형</label>
+        <input type="checkbox" id="triangle" name="figure">
+        <label for="triangle">삼각형</label>
+        <input type="checkbox" id="quadrangle" name="figure">
+        <label for="quadrangle">사각형</label>
+        <input type="checkbox" id="pentagon" name="figure">
+        <label for="pentagon">오각형</label>
+
+        <p>좋아하는 색은 무엇입니까></p>
+        <input type="checkbox" id="white" name="color">
+        <label for="white">하얀색</label>
+        <input type="checkbox" id="red" name="color">
+        <label for="red">빨간색</label>
+        <input type="checkbox" id="green" name="color">
+        <label for="green">초록색</label>
+        <input type="checkbox" id="blue" name="color">
+        <label for="blue">파란색</label>
+      </fieldset>
+      <fieldset>
+        <legend>기타 의견</legend>
+        <textarea rows="3" cols="30"></textarea>
+      </fieldset>
+      <input type="submit">
+    </form>
+  </main>
+  <hr>
+  <footer>
+    <p>입력하느라 고생하셨습니다.</p>
+  </footer>
+</body>
+</html>
