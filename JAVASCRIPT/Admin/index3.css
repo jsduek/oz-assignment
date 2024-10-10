@@ -1,0 +1,30 @@
+* { box-sizing: border-box; }
+html, body{
+    width: 280px;
+    height: 250px;
+    margin: auto;
+}
+form {
+    width: 550px;
+    margin: 25px;
+    background-color: #eaeaea;
+    border-radius: 15px;
+}
+:root[color-theme="dark"] {
+    --background: #fff;
+    --boxColor: #000;
+}
+:root[color-theme="dark"] {
+    --background: #000;
+    --boxColor: #fff;
+}
+html {
+    background: var(--background);
+}
+.themed {
+    display: block;
+    width: 10em;
+    height: 10em;
+    background: var(--boxColor);
+    color: var(--background);
+  }
