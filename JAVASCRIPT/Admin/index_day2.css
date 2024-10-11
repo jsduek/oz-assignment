@@ -1,0 +1,29 @@
+.a1 {
+  width: auto;
+  margin: auto;
+  height: auto;
+  margin-bottom: 10px;
+}
+.search {
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(26, 115, 232);
+  color: white;
+}
+.newbtn {
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(26, 115, 232);
+  color: white;
+}
+.pagination {
+  margin-left: 140px;
+}
+
+.dark {
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(26, 115, 232);
+  color: white;
+  margin-left: 30px;
+}
