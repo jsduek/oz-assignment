@@ -66,7 +66,7 @@ try:
             ('Fish Bun', 'A delicious fish-shaped bun.', 3.00),
             ('Red Bean Bun', 'Sweet bun filled with red bean paste.', 2.50),
             ('Chocolate Bun', 'Decadent chocolate-filled bun.', 3.50),
-            ('Soy Eggs Rice', 'Korea bibimbap.', 0.50)
+            ('Soy Eggs Rice', 'Korea bibimbap.', 2.00)
         ]
         for name, description, price in products:
             cursor.execute("""
@@ -88,7 +88,7 @@ try:
             """, (user_id, created_at))
 
             sales_record_id = cursor.lastrowid
-            for _ in range(20):  # 1~3개의 상품을 추가
+            for _ in range(20):  # 1~3개의 상품을 추가 //  20개 추가
                 product_id = random.choice(product_ids)
                 quantity = random.randint(1, 5)
                 cursor.execute("""
@@ -96,6 +96,7 @@ try:
                     VALUES (%s, %s, %s)
                 """, (sales_record_id, product_id, quantity))
                 
+        # daily_recrods 20개 이력 추가
         cursor.execute("SELECT id FROM stocks")
         stock_ids = [row['id'] for row in cursor.fetchall()]
 
