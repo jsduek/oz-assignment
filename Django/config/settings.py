@@ -30,17 +30,28 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-
-INSTALLED_APPS = [
+DJANGO_SYSTEM_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "boards.apps.BoardsConfig", # 모델 config를 추가해줘야 django에서 boards - apps를 불러온다
-    "users.apps.UsersConfig"   # 새로 생성된것 등록 및 연결
 ]
+
+CUSTOM_USER_APPS = [
+    "boards.apps.BoardsConfig", # 모델 config를 추가해줘야 django에서 boards - apps를 불러온다
+    "users.apps.UsersConfig",   # 새로 생성된것 등록 및 연결
+    "feeds.apps.FeedsConfig",
+    "reviews.apps.ReviewsConfig",
+    "rest_framework",  # restapi 
+    "rest_framework.authtoken",
+    "rest_framework_simplejwt",
+]
+
+
+INSTALLED_APPS = DJANGO_SYSTEM_APPS + CUSTOM_USER_APPS  ## 리스트 형태로 묶는 순간 터미널에서의 startapp이 오류가 되어 생성되지 않는다.
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -126,3 +137,19 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTH_USER_MODEL = 'users.User'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        "config.authentication.JWTAuthentication", # 추가
+    ],
+}
+
+from datetime import timedelta
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=14),
+    "SIGNING_KEY": "SECRET",
+    "ALGORITHM": "HS256",
+    "AUTH_HEADER_TYPES": ("Bearer",),
+}

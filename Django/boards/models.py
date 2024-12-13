@@ -15,5 +15,7 @@ class Board(CommonModel):
     likes = models.PositiveBigIntegerField(default=0)
     reviews = models.PositiveBigIntegerField(default=0)
 
+    user = models.ForeignKey("users.User", on_delete=models.CASCADE)  ## 유저라는 데이터를 보드에서 가져온다.  -> on_delete=models.CASCADE 는 유저데이터 삭제시 게시글(보드) 데이터 삭제 하냐? -> CASCADE 는 삭제해라!
+
     def __str__(self):
         return self.title
