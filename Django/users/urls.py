@@ -21,3 +21,8 @@ urlpatterns = [
     path("login/simpleJWT/refresh", TokenRefreshView.as_view()),
     path("login/simpleJWT/verify", TokenVerifyView.as_view()),
 ]
+
+# {
+#     "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTczNTI3NDY2MiwiaWF0IjoxNzM0MDY1MDYyLCJqdGkiOiI5MTgyYmEyMDRhMzg0ODkyOTFiMGZhMDJmMzRkZGQ2NSIsInVzZXJfaWQiOjF9.VbGI_5TgkmMWLBaQ5pHKvZd5w0DpCLPFsQV7_7vTpek",
+#     "access": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0MDY4NjYyLCJpYXQiOjE3MzQwNjUwNjIsImp0aSI6Ijc4M2YzMDQ1M2U5NjRiZTg4YzNhOThlOTRiNGNiODcwIiwidXNlcl9pZCI6MX0.KLB0i5IoPehTV23s2ftxQ8313YhVsJ3GtmuAYXLckXc"
+# }
